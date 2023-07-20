@@ -30,7 +30,8 @@
 .input{
     /* margin-top: 10px; */
     margin-left: 10vw;
-    width: 500px;
+    width: 300px;
+    overflow-x: hidden;
     height: 50px;
     font-size: 1.5em;
     -webkit-appearance: none;
@@ -43,7 +44,7 @@
 }
 .range{
     margin-left: 10vw;
-    width: 500px;
+    width: 300px;
     height: 50px;
     font-size: 1.5em;
     border-radius: 5px;
@@ -67,9 +68,12 @@ button{
     margin-top: 20px;
     width: 300px;
     margin-left: 10vw;
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: 2em;
     appearance: none;
     border-radius: 10px;
-    background-color: rgb(57, 57, 57);
+    background-color: rgb(49, 49, 49);
+}
+#delete{
+    background-color: rgb(255, 76, 76);
 }

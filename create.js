@@ -36,7 +36,8 @@ document.getElementById('delete').addEventListener('click', function () {
     var prompt = window.confirm('本当に削除しますか？');
     if (prompt) {
         window.localStorage.clear();
+        location.reload();
     } else {
-        alert(window.localStorage);
+        location.reload();
     }
 });
