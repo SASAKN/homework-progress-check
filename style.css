@@ -27,6 +27,12 @@
     display: inline-block;
     border-bottom: solid white 10px;
 }
+ul{
+    font-size: 2em;
+    color: white;
+    margin-left: 150px;
+    list-style: none;
+}
 .input{
     /* margin-top: 10px; */
     margin-left: 10vw;
