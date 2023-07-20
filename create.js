@@ -2,7 +2,13 @@
 var progress = document.getElementById('progress');
 var homework = document.getElementById('name');
 var homeworkinfo = [];
-var number;
+var number = 0;
+//開始時のNULL防止
+window.onclick = function(){
+    window.localStorage.setItem('number', number);
+    console.log('クリックしたためNULLを防止します。');
+    window.onclick = function(){};
+}
 //テンプレートの設定
 function template(name, progress, number) {
     return `{ "number": ${encodeURIComponent(number)}, "name": "${encodeURIComponent(name)}", "progress": ${encodeURIComponent(progress)} }`;
