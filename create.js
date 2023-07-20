@@ -4,10 +4,10 @@ var homework = document.getElementById('name');
 var homeworkinfo = [];
 var number = 0;
 //開始時のNULL防止
-window.onclick = function(){
+window.onclick = function () {
     window.localStorage.setItem('number', number);
     console.log('クリックしたためNULLを防止します。');
-    window.onclick = function(){};
+    window.onclick = function () { };
 }
 //テンプレートの設定
 function template(name, progress, number) {
@@ -31,4 +31,12 @@ progress.addEventListener('change', function () {
 document.getElementById('button').addEventListener('click', function () {
     window.localStorage.getItem('number')
     add_homework(homework.value, progress.value, window.localStorage.getItem('number'));
+});
+document.getElementById('delete').addEventListener('click', function () {
+    var prompt = window.confirm('本当に削除しますか？');
+    if (prompt = true) {
+        window.localStorage.clear();
+    } else {
+        alert(window.localStorage);
+    }
 });
