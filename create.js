@@ -29,7 +29,9 @@ progress.addEventListener('change', function () {
     textelement.textContent = progress.value + '%';
 });
 document.getElementById('button').addEventListener('click', function () {
-    window.localStorage.getItem('number')
+    window.localStorage.getItem('number');
+    document.getElementById('button').textContent = '追加しました'
+    document.getElementById('button').style.backgroundColor = '#00ffc8';
     add_homework(homework.value, progress.value, window.localStorage.getItem('number'));
 });
 document.getElementById('delete').addEventListener('click', function () {

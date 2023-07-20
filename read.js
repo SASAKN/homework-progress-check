@@ -13,5 +13,5 @@ if(localStorage.length !== 0){
 }
 //テンプレート
 function template(json){
-    return`<li class="homework">${decodeURIComponent(json.name)}<progress max="100" value="${json.progress}"></progress><a href="javascript:localStorage.removeItem(${json.number})">🗑️</a></li>`;
+    return`<li class="homework">${decodeURIComponent(json.name)}<progress max="100" value="${json.progress}"></progress><a href="javascript:localStorage.removeItem(${json.number}); location.reload();">🗑️</a></li>`;
 }
