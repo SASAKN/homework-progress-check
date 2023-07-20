@@ -13,3 +13,17 @@
 .bg-sky{
     background-color: rgb(0, 157, 255);
 }
+.title{
+    font-size: 2em;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    margin-left: 10vw;
+    margin-top: 10vh;
+}
+.color-white{
+    color: white;
+}
+.border-bottom{
+    display: inline-block;
+    border-bottom: solid white 10px;
+}
