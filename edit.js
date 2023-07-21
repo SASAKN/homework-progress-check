@@ -47,3 +47,13 @@ function getParam(name, url) {
 var key = getParam('e');
 var parse = JSON.parse(localStorage[key]);
 edit_progress(parse);
+//テンプレートの設定
+function template(name, progress, number) {
+    return `{ "number": ${encodeURIComponent(number)}, "name": "${encodeURIComponent(name)}", "progress": ${encodeURIComponent(progress)} }`;
+}
+//宿題の追加
+function add_homework(name, progress, number) {
+    window.localStorage.setItem(number, template(name, progress, number));
+    console.log(template(name, progress, number));
+    countup(number);
+}
