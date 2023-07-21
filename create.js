@@ -2,25 +2,21 @@
 var progress = document.getElementById('progress');
 var homework = document.getElementById('name');
 var homeworkinfo = [];
-var number = 0;
-//開始時のNULL防止
-window.onclick = function () {
-    window.localStorage.setItem('number', number);
-    console.log('クリックしたためNULLを防止します。');
-    window.onclick = function () { };
-}
+var number = 1;
 //テンプレートの設定
 function template(name, progress, number) {
     return `{ "number": ${encodeURIComponent(number)}, "name": "${encodeURIComponent(name)}", "progress": ${encodeURIComponent(progress)} }`;
 }
 //カウントの設定
 function countup(name, progress, number) {
-    number = JSON.parse(template(name, progress, number)).number + 1;
+    number = JSON.parse(template(name, progress, number)).number;
+    number++;
     window.localStorage.setItem('number', number);
 }
 //宿題の追加
 function add_homework(name, progress, number) {
     window.localStorage.setItem(number, template(name, progress, number));
+    console.log(template(name, progress, number));
     countup(name, progress, number);
 }
 //プログレスの取得と表示
