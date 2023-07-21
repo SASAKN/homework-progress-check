@@ -17,7 +17,7 @@ function template(name, progress, number) {
     return `{ "number": ${encodeURIComponent(number)}, "name": "${encodeURIComponent(name)}", "progress": ${encodeURIComponent(progress)} }`;
 }
 //カウントの設定
-function countup(number) {
+function countup() {
     var a  = localStorage.getItem('number');
     a++;
     window.localStorage.setItem('number', a);
@@ -26,7 +26,7 @@ function countup(number) {
 function add_homework(name, progress, number) {
     window.localStorage.setItem(number, template(name, progress, number));
     console.log(template(name, progress, number));
-    countup(number);
+    countup();
 }
 //プログレスの取得と表示
 progress.addEventListener('change', function () {
