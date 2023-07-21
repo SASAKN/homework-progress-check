@@ -6,6 +6,8 @@ var progress;
 //HTML要素
 var range = document.getElementById('progress');
 var ranget = document.getElementById('progresst');
+var button = document.getElementById('button');
+var donebutton = document.getElementById('done');
 
 //キーの格納
 var key = getParam('e');
@@ -32,9 +34,19 @@ nam = json.name;
 num = json.number;
 progress = json.progress;
 
-//イベントの設定
+//レンジバーのイベントの設定
 range.addEventListener('change', function () {
     ranget.textContent = range.value + '%';
+});
+
+//ボタンのイベントの設定
+button.addEventListener('click', function(){
+    edit_homework();
+});
+
+//完了ボタンのイベントの設定
+donebutton.addEventListener('click', function(){
+    done();
 });
 
 //編集の関数
