@@ -14,8 +14,8 @@ if(localStorage.length !== 0){
 }
 //テンプレート
 function template(json){
-    return`<li class="homework">${decodeURIComponent(json.name)}<progress max="100" value="${json.progress}"></progress><a href="javascript:edit(${json.number}); location.reload();">✏️</a><a href="javascript:localStorage.removeItem(${json.number}); location.reload();">🗑️</a></li>`;
+    return`<li class="homework">${decodeURIComponent(json.name)}<progress max="100" value="${json.progress}"></progress><a href="javascript:edit_progress(${json.number});">✏️</a><a href="javascript:localStorage.removeItem(${json.number}); location.reload();">🗑️</a></li>`;
 }
-function edit(number){
+function edit_progress(number){
     location.href = `edit.html?e=${number}`;
 }
