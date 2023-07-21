@@ -84,3 +84,7 @@ button{
 #delete{
     background-color: rgb(255, 76, 76);
 }
+#done{
+    background-color: rgb(0, 255, 102);
+    color: black;
+}
