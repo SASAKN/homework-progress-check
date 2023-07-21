@@ -14,3 +14,9 @@ function edit(json, number, progress){
     //削除
     localStorage.removeItem(json.number);
 }
+//クエリーを読み込む
+var query = location.search;
+console.log(query);
+if (query === ''){
+    location.href = 'index.html?e=blank';
+}
