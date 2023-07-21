@@ -30,7 +30,7 @@ var storage = localStorage.getItem(key);
 var json = JSON.parse(storage);
 
 //ひとつづつ代入
-nam = json.name;
+nam = decodeURIComponent(json.name);
 num = json.number;
 progress = json.progress;
 
