@@ -37,9 +37,36 @@ range.addEventListener('change', function () {
     ranget.textContent = range.value + '%';
 });
 
+//編集の関数
+function edit_homework(){
+    localStorage.setItem(num,template(nam));
+}
+
+//完了の処理
+var donetext = '✅' + nam + '✅';
+function done(){
+    localStorage.setItem(num, template(donetext));
+}
+
+//テンプレートの設定
+function template(name) {
+    return `{ "number": ${encodeURIComponent(num)}, "name": "${encodeURIComponent(name)}", "progress": ${encodeURIComponent(range.value)} }`;
+}
+
 //ログに残す
+console.log('Debug !!');
+console.log(
+    "%cWelcome",
+    "color:white; background-color:purple; padding:2px; border-radius:4px;",
+    "Debug",
+    "Mode"
+  );
 console.log(key);
 console.log(storage);
 console.log(JSON.parse(storage));
 console.log(nam,num,progress);
 console.log(decodeURIComponent(nam));
+console.log(template(nam));
+console.log(donetext);
+console.log(num, template(donetext));
+console.log(decodeURIComponent(template(nam)));
