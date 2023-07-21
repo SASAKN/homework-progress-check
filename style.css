@@ -92,3 +92,9 @@ button{
     background-color: rgb(255, 255, 87);
     color: gray;
 }
+@media screen and (max-width: 767px){
+    *{
+        width: auto;
+        font-size: auto;
+    }
+}
