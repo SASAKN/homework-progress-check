@@ -9,21 +9,32 @@ range.addEventListener('change', function () {
     edit.progress = range.value;
 });
 //編集して再設計
-function edit_progress(json){
+function edit_progress(json) {
     //保存
     edit = json;
 };
 //宿題の編集
-document.getElementById('button').addEventListener('click', function(){
+document.getElementById('button').addEventListener('click', function () {
     //削除
     localStorage.removeItem(edit.number);
+    //追加
+    localStorage.setItem(edit);
+});
+//宿題の完了
+document.getElementById('done').addEventListener('click', function () {
+    //完了
+    edit.name += '✅';
+    //削除
+    localStorage.removeItem(edit.number);
+    //追加
+    localStorage.setItem(edit);
 });
 //クエリーを読み込む
 var query = location.search;
 console.log(query);
-if (query === ''){
+if (query === '') {
     location.href = 'index.html?e=blank';
-}else{
+} else {
     console.log('編集画面にアクセスするクエリー持っています。');
 }
 //パラメーターを取得
