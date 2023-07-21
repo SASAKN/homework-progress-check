@@ -4,13 +4,13 @@ var edit = [];
 //要素
 var list = document.getElementById('list');
 if(localStorage.length !== 0){
+    list.innerHTML = '';
     for(var i = 0; i < localStorage.length; i++){
         save.push(template(JSON.parse(localStorage[i])));
         list.innerHTML += save[i];
         console.log(template(JSON.parse(localStorage[i])));
     }
 }else{
-    list.innerHTML = '';
 }
 //テンプレート
 function template(json){

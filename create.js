@@ -47,6 +47,7 @@ document.getElementById('delete').addEventListener('click', function () {
     if (prompt) {
         window.localStorage.clear();
         document.cookie = 'delete';
+        localStorage.setItem('number', 0);
         location.reload();
     } else {
         location.reload();

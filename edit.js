@@ -15,19 +15,15 @@ function edit_progress(json) {
 };
 //宿題の編集
 document.getElementById('button').addEventListener('click', function () {
-    //削除
-    localStorage.removeItem(edit.number);
     //追加
-    localStorage.setItem(edit);
+    localStorage.setItem(edit.number,edit);
 });
 //宿題の完了
 document.getElementById('done').addEventListener('click', function () {
     //完了
     edit.name += '✅';
-    //削除
-    localStorage.removeItem(edit.number);
     //追加
-    localStorage.setItem(edit);
+    localStorage.setItem(edit.number,edit);
 });
 //クエリーを読み込む
 var query = location.search;
