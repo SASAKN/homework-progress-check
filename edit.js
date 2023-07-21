@@ -1,20 +1,23 @@
 //変数の設定
-var progress = document.getElementById('progress');
+var range = document.getElementById('progress');
+var edit;
 //プログレスの取得と表示
-progress.addEventListener('change', function () {
+range.addEventListener('change', function () {
     var textelement = document.getElementById('progresst');
     textelement.textContent = progress.value + '%';
+    //編集
+    edit.progress = range.value;
 });
 //編集して再設計
-function edit(json, number, progress){
+function edit_progress(json){
     //保存
-    edit.push(json);
-    //編集
-    edit[number].progress = progress;
+    edit = json;
+};
+//宿題の編集
+document.getElementById('button').addEventListener('click', function(){
     //削除
-    localStorage.removeItem(json.number);
-}
-
+    localStorage.removeItem(edit.number);
+});
 //クエリーを読み込む
 var query = location.search;
 console.log(query);
@@ -33,5 +36,7 @@ function getParam(name, url) {
     if (!results[2]) return '';
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
-//キーを取得
-console.log(getParam('e'));
+//キーを取得してJSONの取得
+var key = getParam('e');
+var parse = JSON.parse(localStorage[key]);
+edit_progress(parse);
