@@ -1,5 +1,5 @@
 //変数
-var name;
+var nam;
 var num;
 var progress;
 
@@ -22,8 +22,24 @@ function getParam(name, url) {
 };
 
 //JSONの取得
-var json = localStorage.getItem(key);
+var storage = localStorage.getItem(key);
+
+//JSONの読み取り
+var json = JSON.parse(storage);
+
+//ひとつづつ代入
+nam = json.name;
+num = json.number;
+progress = json.progress;
+
+//イベントの設定
+range.addEventListener('change', function () {
+    ranget.textContent = range.value + '%';
+});
 
 //ログに残す
 console.log(key);
-console.log(json);
+console.log(storage);
+console.log(JSON.parse(storage));
+console.log(nam,num,progress);
+console.log(decodeURIComponent(nam));
