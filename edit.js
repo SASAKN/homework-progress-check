@@ -1,3 +1,10 @@
+//変数の設定
+var progress = document.getElementById('progress');
+//プログレスの取得と表示
+progress.addEventListener('change', function () {
+    var textelement = document.getElementById('progresst');
+    textelement.textContent = progress.value + '%';
+});
 //編集して再設計
 function edit(json, number, progress){
     //保存
