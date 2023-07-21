@@ -32,6 +32,10 @@ document.getElementById('button').addEventListener('click', function () {
     window.localStorage.getItem('number');
     document.getElementById('button').textContent = '追加しました'
     document.getElementById('button').style.backgroundColor = '#00ffc8';
+    setTimeout(function(){
+        document.getElementById('button').textContent = 'この宿題を追加'
+        document.getElementById('button').style.backgroundColor = 'rgb(49, 49, 49)';
+    },1000);
     add_homework(homework.value, progress.value, window.localStorage.getItem('number'));
 });
 document.getElementById('delete').addEventListener('click', function () {
